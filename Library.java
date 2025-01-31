@@ -14,15 +14,11 @@ public class Library {
         System.out.println("Libro agregado: " + book);
     }
 
-    /// Funcionalidad para listar todos los libros con Stream
+    // Funcionalidad para listar todos los libros
     public void listBooks() {
-        if (books.isEmpty()) {
-            System.out.println("No hay libros en la biblioteca.");
-        } else {
-            System.out.println("Lista de libros:");
-            books.stream()
-                    .map(book -> books.indexOf(book) + 1 + ". " + book) // Agrega el índice y el libro
-                    .forEach(System.out::println); // Imprime cada libro
+        System.out.println("Lista de libros:");
+        for (Book book : books) {
+            System.out.println(book);
         }
     }
 
@@ -36,3 +32,5 @@ public class Library {
         return null;
     }
 }
+
+
