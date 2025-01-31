@@ -31,6 +31,18 @@ public class Library {
         }
         return null;
     }
+
+
+    public void removeBook(String title) {
+        Book bookToRemove = findBookByTitle(title); // Busca el libro por título
+        if (bookToRemove != null) {
+            books.remove(bookToRemove); // Si lo encuentra, lo elimina
+            System.out.println("Libro eliminado: " + bookToRemove);
+        } else {
+            System.out.println("No se encontró el libro con el título: " + title);
+        }
+    }
+    
 }
 
 
