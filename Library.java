@@ -1,8 +1,10 @@
+
 package EjercicioEntronos;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
@@ -31,6 +33,9 @@ public class Library {
         });
 
         // Imprimir los libros ordenados
+    // Funcionalidad para listar todos los libros
+    public void listBooks() {
+        System.out.println("Lista de libros:");
         for (Book book : books) {
             System.out.println(book);
         }
@@ -46,3 +51,20 @@ public class Library {
         return null;
     }
 }
+
+
+
+    public void removeBook(String title) {
+        Book bookToRemove = findBookByTitle(title); // Busca el libro por título
+        if (bookToRemove != null) {
+            books.remove(bookToRemove); // Si lo encuentra, lo elimina
+            System.out.println("Libro eliminado: " + bookToRemove);
+        } else {
+            System.out.println("No se encontró el libro con el título: " + title);
+        }
+    }
+    
+}
+
+
+
