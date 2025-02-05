@@ -1,3 +1,9 @@
+
+package EjercicioEntronos;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +20,19 @@ public class Library {
         System.out.println("Libro agregado: " + book);
     }
 
+    // Funcionalidad para listar todos los libros (ordenados por título)
+    public void listBooks() {
+        System.out.println("Lista de libros (ordenados por título):");
+
+        // Ordenar la lista de libros por título
+        Collections.sort(books, new Comparator<Book>() {
+            @Override
+            public int compare(Book b1, Book b2) {
+                return b1.getTitle().compareToIgnoreCase(b2.getTitle());
+            }
+        });
+
+        // Imprimir los libros ordenados
     // Funcionalidad para listar todos los libros
     public void listBooks() {
         System.out.println("Lista de libros:");
@@ -31,6 +50,8 @@ public class Library {
         }
         return null;
     }
+}
+
 
 
     public void removeBook(String title) {
@@ -44,5 +65,6 @@ public class Library {
     }
     
 }
+
 
 
